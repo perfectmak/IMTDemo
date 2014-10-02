@@ -1,0 +1,33 @@
+<!-- Question will be loaded here -->
+<div id="questionSecion" class="col-md-6 col-md-offset-3">
+	<h2>{{currentQuestion.question}}</h2>
+	
+	<input type="radio" ng-model="option" value="A"><span class="option">{{currentQuestion.optionA}}</span></input>
+	<br/>
+	<input type="radio" ng-model="option" value="B"><span class="option">{{currentQuestion.optionB}}</span></input>
+	<br/>
+	<input type="radio" ng-model="option" value="C"><span class="option">{{currentQuestion.optionC}}</span></input>
+	<br/>
+	<br/>
+	<div>
+		<button class="btn btn-lg pull-right" ng-click="nextQuestion()" ng-hide="submitVisible">Next ></button>
+		<button class="btn btn-lg btn-success pull-right" ng-click="submitAnswer()" ng-show="submitVisible">Submit</button>
+		<button class="btn btn-lg pull-left" ng-click="prevQuestion()" ng-show="prevVisible">< Prev</button>
+	</div>
+</div>
+
+<!-- Modal for popup of final result -->
+<div class="modal" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>{{resultString}}</h2>
+        <br/>
+        <h4>Thank you for playing</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" ng-click="finish()">Finish</button>
+      </div>
+    </div>
+  </div>
+</div>
